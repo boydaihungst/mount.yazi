@@ -17,6 +17,6 @@ In `~/.config/yazi/keymap.toml` add. Replace `/path/to/mmt` with your path:
 ```
 [[manager.prepend_keymap]]
 on   = "M"
-run  = "plugin mount /path/to/mmt"
+run  = "plugin mount --args=/path/to/mmt"
 desc = "Mount manager"
 ```

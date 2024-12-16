@@ -3,7 +3,7 @@ local function fail(s, ...) ya.notify { title = "Mount manager", content = strin
 local function entry(_, args)
    local mmt_path = args[1]
    if not mmt_path then
-      return
+      return fail("You need to set --args=/path/to/mmt")
    end
 
    local _permit = ya.hide()
@@ -13,14 +13,14 @@ local function entry(_, args)
           Command.INHERIT):spawn()
 
    if not child then
-      return fail("Failed to start `mmt`, error: " .. err)
+      return fail("Failed `mmt`: " .. err)
    end
 
    local output, err = child:wait_with_output()
    if not output then
-      return fail("Cannot read `mmt` output, error: " .. err)
+      return fail("`mmt` output error: " .. err)
    elseif not output.status.success and output.status.code ~= 130 then
-      return fail("`mmt` exited with error code %s", output.status.code)
+      return fail("`mmt` error code %s", output.status.code)
    end
 
    local target = output.stdout:gsub("\n$", "")
