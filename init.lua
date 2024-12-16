@@ -1,11 +1,16 @@
 local function fail(s, ...) ya.notify { title = "Mount manager", content = string.format(s, ...), timeout = 5, level = "error" } end
 
-local function entry()
+local function entry(_, args)
+   local mmt_path = args[1]
+   if not mmt_path then
+      return
+   end
+
    local _permit = ya.hide()
 
    local child, err =
-       Command("/home/lyra/slf/mmt/target/debug/mmt"):cwd("/"):stdin(Command.INHERIT):stdout(Command.PIPED):stderr(
-       Command.INHERIT):spawn()
+       Command(mmt_path):cwd("/"):stdin(Command.INHERIT):stdout(Command.PIPED):stderr(
+          Command.INHERIT):spawn()
 
    if not child then
       return fail("Failed to start `mmt`, error: " .. err)
