@@ -1,7 +1,7 @@
 local function fail(s, ...) ya.notify { title = "Mount manager", content = string.format(s, ...), timeout = 5, level = "error" } end
 
 local function entry(_, args)
-   local mmt_path = args[1]
+   local mmt_path = args[1] or "mmt"
    if not mmt_path then
       return fail("You need to set --args=/path/to/mmt")
    end
