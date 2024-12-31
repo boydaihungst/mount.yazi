@@ -2,7 +2,7 @@
 
 This is a Yazi plugin for mounting volumes.
 
-[](screencast.gif)
+![](screencast.gif)
 
 ## Installation
 
