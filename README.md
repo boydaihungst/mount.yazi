@@ -1,6 +1,6 @@
 # mount.yazi
 
-This is a Yazi plugin for mounting volumes.
+This is a Yazi (v25.4.8) plugin for mounting volumes.
 
 ![](screencast.gif)
 
@@ -17,6 +17,7 @@ Download latest pre-compiled binary here: https://github.com/SL-RU/mmtui/release
 Or clone and build from source `https://github.com/SL-RU/mmtui`, copy the path of the compiled binary `mmtui`.
 
 In `~/.config/yazi/keymap.toml` add. But make sure that executable mmtui is in the $PATH env variable:
+
 ```
 [[manager.prepend_keymap]]
 on   = "M"
