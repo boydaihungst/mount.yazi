@@ -1,4 +1,4 @@
---- @since 25.5.28
+--- @since 25.5.31
 
 local function fail(s, ...)
 	ya.notify({ title = "Mount manager", content = string.format(s, ...), timeout = 5, level = "error" })
@@ -28,7 +28,7 @@ local function entry(_, args)
 
 	local target = output.stdout:gsub("\n$", "")
 	if target ~= "" then
-		ya.emit("cd", { target })
+		ya.emit("cd", { target, raw = true })
 	end
 end
 

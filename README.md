@@ -1,6 +1,6 @@
 # mount.yazi
 
-This is a Yazi (v25.5.28) plugin for mounting volumes.
+This is a Yazi (v25.5.31) plugin for mounting volumes.
 
 ![](screencast.gif)
 
